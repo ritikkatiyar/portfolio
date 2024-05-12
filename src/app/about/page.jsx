@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const skillList = ["Java", "Spring Boot", "MySQL","Javascript","MongoDb","NextJs","NodeJS"];
+
 const AboutPage = () => {
   return (
     <motion.div
@@ -12,7 +14,7 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* container */}
-      <div className="">
+      <div className="h-full overflow-scroll lg:flex">
         {/* text container */}
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
           {/* biography container */}
@@ -44,7 +46,19 @@ const AboutPage = () => {
             </div>
           </div>
           {/* skills container */}
-          <div>skills</div>
+          <div className="flex flex-col gap-12 justify-center">
+            <h1 className="font-bold text-2xl">SKILLS</h1>
+            <div className="flex gap-4 flex-wrap">
+              {skillList.map((skill, index) => (
+                <span
+                  className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-white"
+                  key={index}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
           {/* experience container */}
           <div>experience</div>
         </div>
